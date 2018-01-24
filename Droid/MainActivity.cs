@@ -23,6 +23,8 @@ namespace ProctorCreekGreenwayApp.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Xamarin.FormsMaps.Init(this, bundle);
 
+            // this change is for version control purposes; delete later
+
             LoadApplication(new App());
         }
     }
