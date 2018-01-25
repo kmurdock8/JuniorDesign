@@ -8,7 +8,7 @@ namespace ProctorCreekGreenwayApp
         {
             InitializeComponent();
 
-            MainPage = new MapView();
+            MainPage = new NavigationPage(new MapView());
         }
 
         protected override void OnStart()
