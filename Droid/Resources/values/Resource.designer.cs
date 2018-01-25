@@ -3210,9 +3210,6 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0052
 			public const int list_item = 2131427410;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int mapView1 = 2131427516;
-			
 			// aapt resource value: 0x7f0b00bf
 			public const int masked = 2131427519;
 			
@@ -3416,6 +3413,9 @@ namespace ProctorCreekGreenwayApp.Droid
 			
 			// aapt resource value: 0x7f0b0022
 			public const int showTitle = 2131427362;
+			
+			// aapt resource value: 0x7f0b00bc
+			public const int sliding_tabs = 2131427516;
 			
 			// aapt resource value: 0x7f0b007d
 			public const int smallLabel = 2131427453;
