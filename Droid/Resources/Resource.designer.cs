@@ -2964,8 +2964,8 @@ namespace ProctorCreekGreenwayApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int action0 = 2131427496;
+			// aapt resource value: 0x7f0b00b3
+			public const int action0 = 2131427507;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int action_bar = 2131427438;
@@ -2988,17 +2988,17 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b004b
 			public const int action_bar_title = 2131427403;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int action_container = 2131427493;
+			// aapt resource value: 0x7f0b00b0
+			public const int action_container = 2131427504;
 			
 			// aapt resource value: 0x7f0b006f
 			public const int action_context_bar = 2131427439;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int action_divider = 2131427500;
+			// aapt resource value: 0x7f0b00b7
+			public const int action_divider = 2131427511;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int action_image = 2131427494;
+			// aapt resource value: 0x7f0b00b1
+			public const int action_image = 2131427505;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int action_menu_divider = 2131427331;
@@ -3015,11 +3015,11 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b004d
 			public const int action_mode_close_button = 2131427405;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int action_text = 2131427495;
+			// aapt resource value: 0x7f0b00b2
+			public const int action_text = 2131427506;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int actions = 2131427509;
+			// aapt resource value: 0x7f0b00c0
+			public const int actions = 2131427520;
 			
 			// aapt resource value: 0x7f0b004e
 			public const int activity_chooser_view_content = 2131427406;
@@ -3045,17 +3045,29 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0019
 			public const int auto = 2131427353;
 			
+			// aapt resource value: 0x7f0b008d
+			public const int backbutton = 2131427469;
+			
 			// aapt resource value: 0x7f0b002b
 			public const int beginning = 2131427371;
 			
 			// aapt resource value: 0x7f0b0033
 			public const int bottom = 2131427379;
 			
+			// aapt resource value: 0x7f0b0093
+			public const int button1 = 2131427475;
+			
+			// aapt resource value: 0x7f0b0094
+			public const int button2 = 2131427476;
+			
+			// aapt resource value: 0x7f0b0095
+			public const int button3 = 2131427477;
+			
 			// aapt resource value: 0x7f0b0055
 			public const int buttonPanel = 2131427413;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int cancel_action = 2131427497;
+			// aapt resource value: 0x7f0b00b4
+			public const int cancel_action = 2131427508;
 			
 			// aapt resource value: 0x7f0b003a
 			public const int center = 2131427386;
@@ -3069,8 +3081,8 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0065
 			public const int checkbox = 2131427429;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int chronometer = 2131427505;
+			// aapt resource value: 0x7f0b00bc
+			public const int chronometer = 2131427516;
 			
 			// aapt resource value: 0x7f0b0043
 			public const int clip_horizontal = 2131427395;
@@ -3123,14 +3135,17 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b001e
 			public const int disableHome = 2131427358;
 			
+			// aapt resource value: 0x7f0b0091
+			public const int editText1 = 2131427473;
+			
 			// aapt resource value: 0x7f0b0070
 			public const int edit_query = 2131427440;
 			
 			// aapt resource value: 0x7f0b002c
 			public const int end = 2131427372;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int end_padder = 2131427515;
+			// aapt resource value: 0x7f0b00c6
+			public const int end_padder = 2131427526;
 			
 			// aapt resource value: 0x7f0b0035
 			public const int enterAlways = 2131427381;
@@ -3171,8 +3186,8 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0053
 			public const int icon = 2131427411;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int icon_group = 2131427510;
+			// aapt resource value: 0x7f0b00c1
+			public const int icon_group = 2131427521;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int icon_only = 2131427350;
@@ -3183,8 +3198,11 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0050
 			public const int image = 2131427408;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int info = 2131427506;
+			// aapt resource value: 0x7f0b008e
+			public const int imageView1 = 2131427470;
+			
+			// aapt resource value: 0x7f0b00bd
+			public const int info = 2131427517;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int item_touch_helper_previous_elevation = 2131427328;
@@ -3198,11 +3216,20 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b001b
 			public const int light = 2131427355;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int line1 = 2131427511;
+			// aapt resource value: 0x7f0b00c2
+			public const int line1 = 2131427522;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int line3 = 2131427513;
+			// aapt resource value: 0x7f0b00c4
+			public const int line3 = 2131427524;
+			
+			// aapt resource value: 0x7f0b008b
+			public const int linearLayout1 = 2131427467;
+			
+			// aapt resource value: 0x7f0b0092
+			public const int linearLayout2 = 2131427474;
+			
+			// aapt resource value: 0x7f0b008c
+			public const int linearLayout3 = 2131427468;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int listMode = 2131427356;
@@ -3210,14 +3237,17 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0052
 			public const int list_item = 2131427410;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int mapView1 = 2131427516;
+			// aapt resource value: 0x7f0b0090
+			public const int locationdescription = 2131427472;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int masked = 2131427519;
+			// aapt resource value: 0x7f0b008f
+			public const int locationname = 2131427471;
 			
-			// aapt resource value: 0x7f0b00ab
-			public const int media_actions = 2131427499;
+			// aapt resource value: 0x7f0b00c9
+			public const int masked = 2131427529;
+			
+			// aapt resource value: 0x7f0b00b6
+			public const int media_actions = 2131427510;
 			
 			// aapt resource value: 0x7f0b002d
 			public const int middle = 2131427373;
@@ -3225,80 +3255,80 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0048
 			public const int mini = 2131427400;
 			
+			// aapt resource value: 0x7f0b00a2
+			public const int mr_art = 2131427490;
+			
 			// aapt resource value: 0x7f0b0097
-			public const int mr_art = 2131427479;
-			
-			// aapt resource value: 0x7f0b008c
-			public const int mr_chooser_list = 2131427468;
-			
-			// aapt resource value: 0x7f0b008f
-			public const int mr_chooser_route_desc = 2131427471;
-			
-			// aapt resource value: 0x7f0b008d
-			public const int mr_chooser_route_icon = 2131427469;
-			
-			// aapt resource value: 0x7f0b008e
-			public const int mr_chooser_route_name = 2131427470;
-			
-			// aapt resource value: 0x7f0b008b
-			public const int mr_chooser_title = 2131427467;
-			
-			// aapt resource value: 0x7f0b0094
-			public const int mr_close = 2131427476;
+			public const int mr_chooser_list = 2131427479;
 			
 			// aapt resource value: 0x7f0b009a
-			public const int mr_control_divider = 2131427482;
-			
-			// aapt resource value: 0x7f0b00a0
-			public const int mr_control_playback_ctrl = 2131427488;
-			
-			// aapt resource value: 0x7f0b00a3
-			public const int mr_control_subtitle = 2131427491;
-			
-			// aapt resource value: 0x7f0b00a2
-			public const int mr_control_title = 2131427490;
-			
-			// aapt resource value: 0x7f0b00a1
-			public const int mr_control_title_container = 2131427489;
-			
-			// aapt resource value: 0x7f0b0095
-			public const int mr_custom_control = 2131427477;
-			
-			// aapt resource value: 0x7f0b0096
-			public const int mr_default_control = 2131427478;
-			
-			// aapt resource value: 0x7f0b0091
-			public const int mr_dialog_area = 2131427473;
-			
-			// aapt resource value: 0x7f0b0090
-			public const int mr_expandable_area = 2131427472;
-			
-			// aapt resource value: 0x7f0b00a4
-			public const int mr_group_expand_collapse = 2131427492;
+			public const int mr_chooser_route_desc = 2131427482;
 			
 			// aapt resource value: 0x7f0b0098
-			public const int mr_media_main_control = 2131427480;
-			
-			// aapt resource value: 0x7f0b0093
-			public const int mr_name = 2131427475;
+			public const int mr_chooser_route_icon = 2131427480;
 			
 			// aapt resource value: 0x7f0b0099
-			public const int mr_playback_control = 2131427481;
+			public const int mr_chooser_route_name = 2131427481;
 			
-			// aapt resource value: 0x7f0b0092
-			public const int mr_title_bar = 2131427474;
-			
-			// aapt resource value: 0x7f0b009b
-			public const int mr_volume_control = 2131427483;
-			
-			// aapt resource value: 0x7f0b009c
-			public const int mr_volume_group_list = 2131427484;
-			
-			// aapt resource value: 0x7f0b009e
-			public const int mr_volume_item_icon = 2131427486;
+			// aapt resource value: 0x7f0b0096
+			public const int mr_chooser_title = 2131427478;
 			
 			// aapt resource value: 0x7f0b009f
-			public const int mr_volume_slider = 2131427487;
+			public const int mr_close = 2131427487;
+			
+			// aapt resource value: 0x7f0b00a5
+			public const int mr_control_divider = 2131427493;
+			
+			// aapt resource value: 0x7f0b00ab
+			public const int mr_control_playback_ctrl = 2131427499;
+			
+			// aapt resource value: 0x7f0b00ae
+			public const int mr_control_subtitle = 2131427502;
+			
+			// aapt resource value: 0x7f0b00ad
+			public const int mr_control_title = 2131427501;
+			
+			// aapt resource value: 0x7f0b00ac
+			public const int mr_control_title_container = 2131427500;
+			
+			// aapt resource value: 0x7f0b00a0
+			public const int mr_custom_control = 2131427488;
+			
+			// aapt resource value: 0x7f0b00a1
+			public const int mr_default_control = 2131427489;
+			
+			// aapt resource value: 0x7f0b009c
+			public const int mr_dialog_area = 2131427484;
+			
+			// aapt resource value: 0x7f0b009b
+			public const int mr_expandable_area = 2131427483;
+			
+			// aapt resource value: 0x7f0b00af
+			public const int mr_group_expand_collapse = 2131427503;
+			
+			// aapt resource value: 0x7f0b00a3
+			public const int mr_media_main_control = 2131427491;
+			
+			// aapt resource value: 0x7f0b009e
+			public const int mr_name = 2131427486;
+			
+			// aapt resource value: 0x7f0b00a4
+			public const int mr_playback_control = 2131427492;
+			
+			// aapt resource value: 0x7f0b009d
+			public const int mr_title_bar = 2131427485;
+			
+			// aapt resource value: 0x7f0b00a6
+			public const int mr_volume_control = 2131427494;
+			
+			// aapt resource value: 0x7f0b00a7
+			public const int mr_volume_group_list = 2131427495;
+			
+			// aapt resource value: 0x7f0b00a9
+			public const int mr_volume_item_icon = 2131427497;
+			
+			// aapt resource value: 0x7f0b00aa
+			public const int mr_volume_slider = 2131427498;
 			
 			// aapt resource value: 0x7f0b0024
 			public const int multiply = 2131427364;
@@ -3315,14 +3345,14 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0011
 			public const int normal = 2131427345;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int notification_background = 2131427508;
+			// aapt resource value: 0x7f0b00bf
+			public const int notification_background = 2131427519;
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int notification_main_column = 2131427502;
+			// aapt resource value: 0x7f0b00b9
+			public const int notification_main_column = 2131427513;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int notification_main_column_container = 2131427501;
+			// aapt resource value: 0x7f0b00b8
+			public const int notification_main_column_container = 2131427512;
 			
 			// aapt resource value: 0x7f0b0041
 			public const int parallax = 2131427393;
@@ -3345,11 +3375,11 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b003f
 			public const int right = 2131427391;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int right_icon = 2131427507;
+			// aapt resource value: 0x7f0b00be
+			public const int right_icon = 2131427518;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int right_side = 2131427503;
+			// aapt resource value: 0x7f0b00ba
+			public const int right_side = 2131427514;
 			
 			// aapt resource value: 0x7f0b0012
 			public const int satellite = 2131427346;
@@ -3450,8 +3480,8 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0040
 			public const int start = 2131427392;
 			
-			// aapt resource value: 0x7f0b00aa
-			public const int status_bar_latest_event_content = 2131427498;
+			// aapt resource value: 0x7f0b00b5
+			public const int status_bar_latest_event_content = 2131427509;
 			
 			// aapt resource value: 0x7f0b0068
 			public const int submenuarrow = 2131427432;
@@ -3465,11 +3495,11 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0013
 			public const int terrain = 2131427347;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int text = 2131427514;
+			// aapt resource value: 0x7f0b00c5
+			public const int text = 2131427525;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int text2 = 2131427512;
+			// aapt resource value: 0x7f0b00c3
+			public const int text2 = 2131427523;
 			
 			// aapt resource value: 0x7f0b005c
 			public const int textSpacerNoButtons = 2131427420;
@@ -3486,8 +3516,8 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b000d
 			public const int textinput_error = 2131427341;
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int time = 2131427504;
+			// aapt resource value: 0x7f0b00bb
+			public const int time = 2131427515;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int title = 2131427412;
@@ -3498,8 +3528,8 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b0061
 			public const int title_template = 2131427425;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int toolbar = 2131427517;
+			// aapt resource value: 0x7f0b00c7
+			public const int toolbar = 2131427527;
 			
 			// aapt resource value: 0x7f0b0034
 			public const int top = 2131427380;
@@ -3525,11 +3555,11 @@ namespace ProctorCreekGreenwayApp.Droid
 			// aapt resource value: 0x7f0b000e
 			public const int view_offset_helper = 2131427342;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int visible = 2131427518;
+			// aapt resource value: 0x7f0b00c8
+			public const int visible = 2131427528;
 			
-			// aapt resource value: 0x7f0b009d
-			public const int volume_item_container = 2131427485;
+			// aapt resource value: 0x7f0b00a8
+			public const int volume_item_container = 2131427496;
 			
 			// aapt resource value: 0x7f0b0018
 			public const int wide = 2131427352;
@@ -3748,82 +3778,82 @@ namespace ProctorCreekGreenwayApp.Droid
 			public const int design_text_input_password_icon = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int mr_chooser_dialog = 2130903081;
+			public const int locationpage = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int mr_chooser_list_item = 2130903082;
+			public const int mr_chooser_dialog = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int mr_controller_material_dialog_b = 2130903083;
+			public const int mr_chooser_list_item = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int mr_controller_volume_item = 2130903084;
+			public const int mr_controller_material_dialog_b = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int mr_playback_control = 2130903085;
+			public const int mr_controller_volume_item = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int mr_volume_control = 2130903086;
+			public const int mr_playback_control = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int notification_action = 2130903087;
+			public const int mr_volume_control = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int notification_action_tombstone = 2130903088;
+			public const int notification_action = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int notification_media_action = 2130903089;
+			public const int notification_action_tombstone = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int notification_media_cancel_action = 2130903090;
+			public const int notification_media_action = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int notification_template_big_media = 2130903091;
+			public const int notification_media_cancel_action = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int notification_template_big_media_custom = 2130903092;
+			public const int notification_template_big_media = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int notification_template_big_media_narrow = 2130903093;
+			public const int notification_template_big_media_custom = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int notification_template_big_media_narrow_custom = 2130903094;
+			public const int notification_template_big_media_narrow = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int notification_template_custom_big = 2130903095;
+			public const int notification_template_big_media_narrow_custom = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_template_icon_group = 2130903096;
+			public const int notification_template_custom_big = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int notification_template_lines_media = 2130903097;
+			public const int notification_template_icon_group = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int notification_template_media = 2130903098;
+			public const int notification_template_lines_media = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int notification_template_media_custom = 2130903099;
+			public const int notification_template_media = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int notification_template_part_chronometer = 2130903100;
+			public const int notification_template_media_custom = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int notification_template_part_time = 2130903101;
+			public const int notification_template_part_chronometer = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int select_dialog_item_material = 2130903102;
+			public const int notification_template_part_time = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int select_dialog_multichoice_material = 2130903103;
+			public const int select_dialog_item_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int select_dialog_singlechoice_material = 2130903104;
+			public const int select_dialog_multichoice_material = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int support_simple_spinner_dropdown_item = 2130903105;
+			public const int select_dialog_singlechoice_material = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int Tabbar = 2130903106;
+			public const int support_simple_spinner_dropdown_item = 2130903106;
 			
 			// aapt resource value: 0x7f030043
 			public const int Toolbar = 2130903107;

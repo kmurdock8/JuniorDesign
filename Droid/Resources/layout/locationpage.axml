@@ -15,7 +15,7 @@
             p1:text="&lt;"
             p1:layout_width="wrap_content"
             p1:layout_height="match_parent"
-            p1:id="@backbutton"
+            p1:id="@+id/backbutton"
             p1:textSize="@dimen/abc_action_bar_progress_bar_size"
             p1:background="@color/design_fab_shadow_end_color" />
     </LinearLayout>
@@ -27,14 +27,14 @@
     <EditText
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@locationname"
+        p1:id="@+id/locationname"
         p1:text="Georgia Tech"
         p1:textSize="@dimen/abc_action_bar_progress_bar_size" />
     <EditText
         p1:inputType="textMultiLine"
         p1:layout_width="match_parent"
         p1:layout_height="170.5dp"
-        p1:id="@locationdescription"
+        p1:id="@+id/locationdescription"
         p1:text="This is a college located in Atlanta, GA."
         p1:textSize="@dimen/abc_action_bar_content_inset_material" />
     <EditText
