@@ -31,6 +31,8 @@ namespace ProctorCreekGreenwayApp
             pin.Label = "Clough Undergraduate Learning Commons";
             pin.Position = position;
             map.Pins.Add(pin);
+            pin.Clicked += this.OnLabelClick;
+
 
             var searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
             searchBar.SearchButtonPressed += (object sender, EventArgs e) => {
@@ -39,10 +41,30 @@ namespace ProctorCreekGreenwayApp
                 }
             };
 
+            Button button = new Button() {Text = "QR"};
+            button.Clicked += this.OnQRClick;
+
+
             var stack = new StackLayout { Spacing = 0 };
+            var grid = new Grid();
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(12, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             stack.Children.Add(searchBar);
-            stack.Children.Add(map);
+            grid.Children.Add(map, 0, 0);
+            Grid.SetRowSpan(map, 2);
+            grid.Children.Add(button, 0, 1);
+            //stack.Children.Add(map);
+            stack.Children.Add(grid);
             Content = stack;
+        }
+
+        async void OnLabelClick(object sender, EventArgs e) {
+            await Navigation.PushAsync(new StoryPage());
+        } 
+
+        async void OnQRClick(object sender, EventArgs e) {
+            await Navigation.PushAsync(new QRScan());
         }
     }
 }
