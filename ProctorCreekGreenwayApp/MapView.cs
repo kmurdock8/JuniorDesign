@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using ZXing.Net.Mobile.Forms;
+using System.Collections.Generic;
 
 namespace ProctorCreekGreenwayApp
 {
@@ -41,9 +42,25 @@ namespace ProctorCreekGreenwayApp
             searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
             searchBar.SearchButtonPressed += this.OnSearchClick;
 
+            var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
+            options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
+                    ZXing.BarcodeFormat.QR_CODE
+            };
+
+            var scanner = new QRScan(options);
+            scanner.OnScanResult += async (result) => {
+                scanner.IsScanning = false;
+                Device.BeginInvokeOnMainThread(async () => {
+                    scanner.readout = result.Text;
+                    await Navigation.PopAsync();
+                });
+            };
+
             Button button = new Button() {Text = "QR"};
             //button.Clicked += this.OnQRClick;
-            button.Clicked += this.OnQRClick;
+            button.Clicked += async (sender, e) => {
+                await Navigation.PushAsync(scanner);
+            };
 
 
 
@@ -69,9 +86,7 @@ namespace ProctorCreekGreenwayApp
         } 
 
         async void OnQRClick(object sender, EventArgs e) {
-            var scanner = new ZXingScannerPage();
-            scanner.IsScanning = true;
-            await Navigation.PushAsync(scanner);
+            
 
         }
 
