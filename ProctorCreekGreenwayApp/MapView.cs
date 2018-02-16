@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using ZXing.Net.Mobile.Forms;
 
 namespace ProctorCreekGreenwayApp
 {
@@ -41,7 +42,10 @@ namespace ProctorCreekGreenwayApp
             searchBar.SearchButtonPressed += this.OnSearchClick;
 
             Button button = new Button() {Text = "QR"};
+            //button.Clicked += this.OnQRClick;
             button.Clicked += this.OnQRClick;
+
+
 
 
             var stack = new StackLayout { Spacing = 0 };
@@ -56,6 +60,8 @@ namespace ProctorCreekGreenwayApp
             //stack.Children.Add(map);
             stack.Children.Add(grid);
             Content = stack;
+
+
         }
 
         async void OnLabelClick(object sender, EventArgs e) {
@@ -63,7 +69,10 @@ namespace ProctorCreekGreenwayApp
         } 
 
         async void OnQRClick(object sender, EventArgs e) {
-            await Navigation.PushAsync(new QRScan());
+            var scanner = new ZXingScannerPage();
+            scanner.IsScanning = true;
+            await Navigation.PushAsync(scanner);
+
         }
 
         public void OnSearchClick(object sender, EventArgs e) {

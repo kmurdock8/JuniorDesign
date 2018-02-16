@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.JD7322.ProctorCreekGreenwayApp">
+<<<<<<< Updated upstream
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="26" />
+=======
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="25" />
+>>>>>>> Stashed changes
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />

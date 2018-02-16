@@ -8,9 +8,7 @@ namespace ProctorCreekGreenwayApp
         {
             Content = new StackLayout()
             {
-                Children = {
-                    new Label() {Text = "QR Scanner Here"}
-                }
+                
             };
         }
     }
