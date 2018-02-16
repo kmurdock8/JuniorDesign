@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -12,8 +11,12 @@ namespace ProctorCreekGreenwayApp
          * Shown on MainPage when App is started
         */
 
+        SearchBar searchBar;
+
         public MapView()
         {
+            Title = "Map view";
+
             // Create map centered at the Culc
             var position = new Position(33.774754, -84.396322);
 
@@ -34,12 +37,8 @@ namespace ProctorCreekGreenwayApp
             pin.Clicked += this.OnLabelClick;
 
 
-            var searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
-            searchBar.SearchButtonPressed += (object sender, EventArgs e) => {
-                if (searchBar.Text.Equals("Culc")) {
-                    Navigation.PushAsync(new StoryPage());
-                }
-            };
+            searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
+            searchBar.SearchButtonPressed += this.OnSearchClick;
 
             Button button = new Button() {Text = "QR"};
             button.Clicked += this.OnQRClick;
@@ -65,6 +64,13 @@ namespace ProctorCreekGreenwayApp
 
         async void OnQRClick(object sender, EventArgs e) {
             await Navigation.PushAsync(new QRScan());
+        }
+
+        public void OnSearchClick(object sender, EventArgs e) {
+            if (searchBar.Text.Equals("Culc"))
+            {
+                Navigation.PushAsync(new StoryPage());
+            }
         }
     }
 }

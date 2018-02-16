@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using System;
+
 
 namespace ProctorCreekGreenwayApp
 {
@@ -7,8 +9,8 @@ namespace ProctorCreekGreenwayApp
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MapView());
+            MainPage = new MainPage();
+           
         }
 
         protected override void OnStart()
