@@ -4,12 +4,41 @@
             x:Class="ProctorCreekGreenwayApp.SettingsView"
             Title="=">
 	<ContentPage.Content>
-        <TableView Intent="Settings">
-            <TableRoot>
-                <TableSection Title="Settings">
-                   
-                </TableSection>
-            </TableRoot>
-        </TableView>
+        <StackLayout>
+            <TableView Intent="Settings">
+                <TableRoot>
+                    <TableSection Title="Settings:">
+                        <SwitchCell Text="Notifications"
+                                    x:Name="notifications" 
+                                    On="true"/>
+                    </TableSection>
+                    <TableSection Title="I want to be notified about: "
+                                  x:Name="interests" >
+                        <SwitchCell Text = "Music" 
+                                    x:Name="music"/>
+                        <SwitchCell Text = "History" 
+                                    x:Name="history"/>
+                        <SwitchCell Text = "Food" 
+                                    x:Name="food"/>
+                        <SwitchCell Text = "Art" 
+                                    x:Name="art"/>
+                        <SwitchCell Text = "Nature" 
+                                    x:Name="nature"/>
+                        <SwitchCell Text = "Architecture" 
+                                    x:Name="architecture"/>
+                        <SwitchCell Text = "Select/Unselect All" 
+                                    x:Name="selectAll"/>
+                    </TableSection>
+                    <TableSection Title="Location Services:">
+                        <ViewCell>
+                            <StackLayout>
+                                <Label x:Name="locationLbl"/>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

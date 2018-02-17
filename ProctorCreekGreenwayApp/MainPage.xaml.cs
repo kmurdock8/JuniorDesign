@@ -7,6 +7,10 @@ namespace ProctorCreekGreenwayApp
 {
     public partial class MainPage : MasterDetailPage
     {
+        /**
+         * Main page uses a MasterDetailPage made up of the map view
+         * and settings pane.
+         */
 
         public MainPage()
         {

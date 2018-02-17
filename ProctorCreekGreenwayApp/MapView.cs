@@ -17,10 +17,8 @@ namespace ProctorCreekGreenwayApp
 
         public MapView()
         {
-            Title = "Map view";
-
-            // Create map centered at the Culc
-            var position = new Position(33.774754, -84.396322);
+            // Marker at proctor creek greenway
+            var position = new Position(33.77935734847667, -84.4592934108673);
 
             Map map = new Map(
                 MapSpan.FromCenterAndRadius(
@@ -33,7 +31,7 @@ namespace ProctorCreekGreenwayApp
             };
 
             Pin pin = new Pin();
-            pin.Label = "Clough Undergraduate Learning Commons";
+            pin.Label = "Proctor Creek Greenway";
             pin.Position = position;
             map.Pins.Add(pin);
             pin.Clicked += this.OnLabelClick;
@@ -85,15 +83,13 @@ namespace ProctorCreekGreenwayApp
             await Navigation.PushAsync(new StoryPage());
         } 
 
-        async void OnQRClick(object sender, EventArgs e) {
-            
+        //async void OnQRClick(object sender, EventArgs e) {
+        //}
 
-        }
-
-        public void OnSearchClick(object sender, EventArgs e) {
+        async void OnSearchClick(object sender, EventArgs e) {
             if (searchBar.Text.Equals("Culc"))
             {
-                Navigation.PushAsync(new StoryPage());
+                await Navigation.PushAsync(new StoryPage());
             }
         }
     }
