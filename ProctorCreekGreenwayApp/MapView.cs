@@ -3,26 +3,31 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using ZXing.Net.Mobile.Forms;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace ProctorCreekGreenwayApp
 {
     public class MapView : ContentPage
     {
+
+        Map map;
+        List<Story> storyList;
+        SearchBar searchBar;
+
         /*
          * Generic Mapview function for both Android and IOS
          * Shown on MainPage when App is started
         */
-
-        SearchBar searchBar;
-
         public MapView()
         {
-            // Marker at proctor creek greenway
-            var position = new Position(33.77935734847667, -84.4592934108673);
+            // Location of proctor creek
+            var proctorCreek = new Position(33.778822, -84.439945);
 
-            Map map = new Map(
+            // Inititialize map centered around proctor creek
+            map = new Map(
                 MapSpan.FromCenterAndRadius(
-                    position, Distance.FromMiles(0.3)))
+                    proctorCreek, Distance.FromMiles(0.75)))
             {
                 IsShowingUser = true,
                 HeightRequest = 100,
@@ -30,39 +35,41 @@ namespace ProctorCreekGreenwayApp
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
-            Pin pin = new Pin();
-            pin.Label = "Proctor Creek Greenway";
-            pin.Position = position;
-            map.Pins.Add(pin);
-            pin.Clicked += this.OnLabelClick;
 
 
+            // Get list of all stories from central database
+            InitializePins();
+            string pins = map.Pins.ToString();
+
+
+            // Initialize search bar functionality
             searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
             searchBar.SearchButtonPressed += this.OnSearchClick;
 
+            // Initialize QR functionality
             var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
             options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
                     ZXing.BarcodeFormat.QR_CODE
             };
 
             var scanner = new QRScan(options);
-            scanner.OnScanResult += async (result) => {
+            scanner.OnScanResult += async (result) =>
+            {
                 scanner.IsScanning = false;
-                Device.BeginInvokeOnMainThread(async () => {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
                     scanner.readout = result.Text;
                     await Navigation.PopAsync();
                 });
             };
 
-            Button button = new Button() {Text = "QR"};
-            //button.Clicked += this.OnQRClick;
-            button.Clicked += async (sender, e) => {
+            Button button = new Button() { Text = "QR" };
+            button.Clicked += async (sender, e) =>
+            {
                 await Navigation.PushAsync(scanner);
             };
 
-
-
-
+            // GUI stuff
             var stack = new StackLayout { Spacing = 0 };
             var grid = new Grid();
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(12, GridUnitType.Star) });
@@ -72,26 +79,54 @@ namespace ProctorCreekGreenwayApp
             grid.Children.Add(map, 0, 0);
             Grid.SetRowSpan(map, 2);
             grid.Children.Add(button, 0, 1);
-            //stack.Children.Add(map);
             stack.Children.Add(grid);
             Content = stack;
-
-
         }
 
-        async void OnLabelClick(object sender, EventArgs e) {
+        /*
+         * Simple method that redirects use to a story page when a story window is clicked
+         */
+        async void OnLabelClick(object sender, EventArgs e)
+        {
             await Navigation.PushAsync(new StoryPage());
-        } 
+        }
 
-        //async void OnQRClick(object sender, EventArgs e) {
-        //}
-
-        async void OnSearchClick(object sender, EventArgs e) {
+        // TODO: update this method to do something productive
+        async void OnSearchClick(object sender, EventArgs e)
+        {
             if (searchBar.Text.Equals("Culc"))
             {
                 await Navigation.PushAsync(new StoryPage());
             }
         }
-    }
+
+        public async void InitializePins()
+        {
+            // Get list of stories from DB
+            storyList = await App.DBManager.GetStoriesAsync();
+
+            // Loop through each story
+            foreach (Story s in storyList) {
+                // Get story info
+                double lat = s.Lat;
+                double lng = s.Long;
+                string locName = s.Name;
+
+                // Create new pin
+                var pos = new Position(lat, lng);
+                Pin pin = new Pin
+                {
+                    Label = locName,
+                    Position = pos,
+                };
+                pin.Clicked += this.OnLabelClick;
+                map.Pins.Add(pin);
+            }
+        }
+    } 
+
+
+        
+    
 }
 

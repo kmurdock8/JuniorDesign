@@ -10,7 +10,7 @@
                     <TableSection Title="Settings:">
                         <SwitchCell Text="Notifications"
                                     x:Name="notifications" 
-                                    On="true"/>
+                                    />
                     </TableSection>
                     <TableSection Title="I want to be notified about: "
                                   x:Name="interests" >
