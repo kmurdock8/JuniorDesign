@@ -6,7 +6,7 @@ using ProctorCreekGreenwayApp.Droid;
 [assembly: Dependency(typeof(DBFileHelper))]
 namespace ProctorCreekGreenwayApp.Droid
 {
-    public class DBFileHelper
+    public class DBFileHelper: IDBFileHelper
     {
         public string GetLocalFilePath(string filename)
         {
