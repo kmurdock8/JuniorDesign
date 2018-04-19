@@ -82,6 +82,10 @@ namespace ProctorCreekGreenwayApp
             Content = stack;
         }
 
+        /*
+         * Central database is called and the stories are retreived
+         * Map is populated with pins for each location
+         */
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -105,14 +109,41 @@ namespace ProctorCreekGreenwayApp
                 };
                 pin.Clicked += this.OnLabelClick;
                 map.Pins.Add(pin);
+                storyList.Add(s);
             }
         }
         /*
-         * Simple method that redirects user to a story page when a story window is clicked
+         * Event handler for whan a pins window is clicked
          */
         async void OnLabelClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new StoryPage());
+            // Figure out what pin was clicked
+            Pin loc = (Pin)sender;
+            string locName = loc.Label;
+            Position latlong = loc.Position;
+
+
+            // Loop through story list and find the matching story to this location
+            int storyID = -1;
+            Story story = null;
+            foreach (Story s in storyList) {
+                story = s;
+                if (s.Name.Equals(locName)) {
+                    // Update storyID
+                    storyID = s.ID;
+                    story = s;
+                }
+            }
+
+            // FOR TESTING
+            if (storyID == -1) {
+                Debug.WriteLine("NO STORY FOUND; USING DEFAULT");
+                storyID = 5;
+                story = storyList[0];
+            }
+
+            // Direct to story page
+            await Navigation.PushAsync(new StoryPage(story));
         }
 
         // TODO: update this method to do something productive
@@ -120,7 +151,7 @@ namespace ProctorCreekGreenwayApp
         {
             if (searchBar.Text.Equals("Culc"))
             {
-                await Navigation.PushAsync(new StoryPage());
+                //await Navigation.PushAsync(new StoryPage());
             }
         }
     }   
