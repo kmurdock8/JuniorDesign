@@ -12,7 +12,7 @@ namespace ProctorCreekGreenwayApp
     public class MapView : ContentPage
     {
 
-        private static Map map;
+        private static ProctorCreekMap map;
         public static List<Story> storyList = new List<Story>();
         public SearchBar searchBar;
         public StackLayout stack;
@@ -28,7 +28,7 @@ namespace ProctorCreekGreenwayApp
             var proctorCreek = new Position(33.778822, -84.439945);
 
             //Inititialize map centered around proctor creek
-            map = new Map(
+            map = new ProctorCreekMap(
                 MapSpan.FromCenterAndRadius(
                     proctorCreek, Distance.FromMiles(2)))
             {
@@ -98,12 +98,14 @@ namespace ProctorCreekGreenwayApp
                 double lng = s.Long;
                 string locName = s.Name;
 
+                s.ImageURL = await App.DBManager.GetImageURLAsync(s.ID);
                 // Create new pin
                 var pos = new Position(lat, lng);
-                Pin pin = new Pin
+                ProctorCreekPin pin = new ProctorCreekPin
                 {
-                    Label = locName,
+                    Label = "",
                     Position = pos,
+                    story = s
                 };
                 pin.Clicked += this.OnLabelClick;
                 map.Pins.Add(pin);
@@ -116,8 +118,8 @@ namespace ProctorCreekGreenwayApp
         async void OnLabelClick(object sender, EventArgs e)
         {
             // Figure out what pin was clicked
-            Pin loc = (Pin)sender;
-            string locName = loc.Label;
+            ProctorCreekPin loc = (ProctorCreekPin)sender;
+            string locName = loc.story.Name;
             Position latlong = loc.Position;
 
 

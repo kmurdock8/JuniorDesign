@@ -117,14 +117,28 @@ namespace ProctorCreekGreenwayApp
 
                 //Create a new image for the left side, and set it from Story.PictureURL
                 //NSData imageData = NSData.FromUrl(new NSUrl(pin.story.PictureURL));
+
+
                 NSData imageData = null;
+                imageData = NSData.FromUrl(new NSUrl(pin.story.ImageURL));
+                /*
+                if (pin.story.Images.Count > 0)
+                {
+                    System.Diagnostics.Debug.Write("Non null story: ");
+                    System.Diagnostics.Debug.WriteLine(pin.story.Name);
+                    System.Diagnostics.Debug.WriteLine(pin.story.Images[0]);
+                   imageData = NSData.FromUrl(new NSUrl(pin.story.Images[0]));
+                }
+                */
                 UIImage image = null;
 
                 //Check if imageData is null. If it's not, then make an image
                 if (imageData != null)
                 {
                     image = new UIImage(imageData);
+                    System.Diagnostics.Debug.WriteLine(image.Size);
                 }
+
 
                 //Add the label (for the left side) to stackViewLeft.
                 stackViewLeft.AddArrangedSubview(storyNameLabel);
@@ -162,6 +176,11 @@ namespace ProctorCreekGreenwayApp
                 containerStackView.AddArrangedSubview(stackViewLeft);
                 containerStackView.AddArrangedSubview(stackViewRight);
 
+                NSLayoutConstraint topLSV = NSLayoutConstraint.Create(stackViewLeft, NSLayoutAttribute.Top, NSLayoutRelation.Equal,
+                                                                      containerStackView, NSLayoutAttribute.Top, 1.0f, 2.0f);
+                NSLayoutConstraint topLSNL = NSLayoutConstraint.Create(storyNameLabel, NSLayoutAttribute.Top, NSLayoutRelation.Equal,
+                                                    stackViewLeft, NSLayoutAttribute.Top, 1.0f, 2.0f);
+                stackViewLeft.AddConstraint(topLSNL);
                 //Assign stackViewLeft to the LeftCalloutAccessory of the annotation.
                 annotationView.DetailCalloutAccessoryView = containerStackView;
                 //annotationView.LeftCalloutAccessoryView = new UIImageView(image);

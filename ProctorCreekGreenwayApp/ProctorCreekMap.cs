@@ -7,9 +7,9 @@ namespace ProctorCreekGreenwayApp
 {
     public class ProctorCreekMap : Map
     {
-        public List<ProctorCreekPin> ProctorCreekPins { get; set; }
-
-        public ProctorCreekMap(MapSpan m) : base(m) => ProctorCreekPins = new List<ProctorCreekPin>();
+        public ProctorCreekMap(MapSpan m) : base(m) {
+            
+        }
     }
 
     public class ProctorCreekPin : Pin
