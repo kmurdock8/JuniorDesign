@@ -23,6 +23,8 @@ namespace ProctorCreekGreenwayApp
          */
         public List<Story> Stories { get; private set; }
 
+        public List<string> Images { get; private set; }
+
         /*
          * Constructor initializes an HTTP client to access central DB
          */
@@ -32,17 +34,11 @@ namespace ProctorCreekGreenwayApp
         }
 
         /*
-         * Simple getter and setter method to populate a list with images for a particular story
-         */
-        public List<string> StoryImages { get; private set; }
-
-        /*
          * Gets the list of all the stories stored in the central DB
          */
         public async Task<List<Story>> GetStoriesAsync() {
             // Initialize stories list
             Stories = new List<Story>();
-            //string stories = "";
 
             // Edit API URL to retreive all stories
             string storiesURL = apiURL + "/story";
@@ -71,36 +67,38 @@ namespace ProctorCreekGreenwayApp
             return Stories;
         }
 
-        public async Task<List<string>> GetStoryImages(int storyID) {
-            // Initialize image list
-            StoryImages = new List<string>();
-
-            // Edit API URL to retreive this stories images
-            string imageURL = apiURL + "/storyimage/" + storyID;
+        public async Task<string> GetImageURLAsync(int imageID) 
+        {
+            // Edit api URL to retreive this image info from database
+            string imageURL = apiURL + "/storyimage/" + imageID;
             Uri imageUri = new Uri(string.Format(imageURL, string.Empty));
 
-            try
-            {
+            // URL to return; will hold the URL to actual image
+            string iurl = "";
+
+            try {
                 HttpResponseMessage response = await client.GetAsync(imageUri);
 
                 // Check if request was successful
                 if (response.IsSuccessStatusCode)
                 {
-                    // Get content of response and translate it to a list of stories
+                    // Get content of response and translate it to this stories image list
                     var content = await response.Content.ReadAsStringAsync();
-                    StoryImages = JsonConvert.DeserializeObject<List<string>>(content);
+                    JToken token = JObject.Parse(content);
+                    iurl = (string)token.SelectToken("image");
                 }
                 else
                 {
                     Debug.WriteLine(response);
                 }
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
+                Debug.WriteLine("EXCEPTION THROWN:");
                 Debug.WriteLine(e.Message);
             }
 
-            return StoryImages;
+            return iurl;
         }
+
+
     } // end of restservice class
 }

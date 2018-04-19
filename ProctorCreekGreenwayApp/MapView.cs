@@ -15,6 +15,7 @@ namespace ProctorCreekGreenwayApp
         private static Map map;
         public static List<Story> storyList = new List<Story>();
         public SearchBar searchBar;
+        public StackLayout stack;
 
         /*
          * Generic Mapview function for both Android and IOS
@@ -40,6 +41,7 @@ namespace ProctorCreekGreenwayApp
             // Initialize search bar functionality
             searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
             searchBar.SearchButtonPressed += this.OnSearchClick;
+            searchBar.TextChanged += this.OnSearchTextChange;
 
             // Initialize QR functionality
             var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
@@ -65,7 +67,7 @@ namespace ProctorCreekGreenwayApp
             };
 
             // GUI stuff
-            var stack = new StackLayout { Spacing = 0 };
+            stack = new StackLayout { Spacing = 0 };
             var grid = new Grid();
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(12, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -139,6 +141,25 @@ namespace ProctorCreekGreenwayApp
 
             // Direct to story page
             await Navigation.PushAsync(new StoryPage(story));
+        }
+
+
+        async void OnSearchTextChange(Object sender, EventArgs e) {
+            // Set autocomplete to be all the story names
+            ListView autocomplete = new ListView();
+
+            // Get what user has typed so far
+            SearchBar sb = (SearchBar)sender;
+            string search = sb.Text;
+
+            List<string> storyNames = new List<string>();
+            foreach (Story s in storyList) {
+                if (s.Name.Contains(search)) {
+                    storyNames.Add(s.Name);
+                }
+            }
+            autocomplete.ItemsSource = storyNames;
+            stack.Children.Add(autocomplete);
         }
 
         // TODO: update this method to do something productive
