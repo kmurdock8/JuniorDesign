@@ -97,15 +97,28 @@ namespace ProctorCreekGreenwayApp
                 double lat = s.Lat;
                 double lng = s.Long;
                 string locName = s.Name;
+                int imageID = -1;
 
-                s.ImageURL = await App.DBManager.GetImageURLAsync(s.ID);
+                if (s.Images.Count > 0)
+                {
+                    string[] split = s.Images[0].Split('/');
+                    try
+                    {
+                        imageID = System.Convert.ToInt32(split[4]);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine(e.Message);
+                    }
+                }
                 // Create new pin
                 var pos = new Position(lat, lng);
                 ProctorCreekPin pin = new ProctorCreekPin
                 {
                     Label = "",
                     Position = pos,
-                    story = s
+                    story = s,
+                    ImageURL = await App.DBManager.GetImageURLAsync(imageID),
                 };
                 pin.Clicked += this.OnLabelClick;
                 map.Pins.Add(pin);

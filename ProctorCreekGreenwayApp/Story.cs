@@ -10,7 +10,6 @@ namespace ProctorCreekGreenwayApp
         public string Details { get; set; }
         public int ID { get; set; }
         public List<string> Images { get; set; }
-        public string ImageURL { get; set; }
         public double Lat { get; set; }
         public double Long { get; set; }
         public string Modified_date { get; set; }

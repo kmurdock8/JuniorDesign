@@ -15,6 +15,7 @@ namespace ProctorCreekGreenwayApp
     public class ProctorCreekPin : Pin
     {
         public Story story;
+        public string ImageURL;
     }
 }
 

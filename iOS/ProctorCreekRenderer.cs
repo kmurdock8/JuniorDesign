@@ -120,7 +120,7 @@ namespace ProctorCreekGreenwayApp
 
 
                 NSData imageData = null;
-                imageData = NSData.FromUrl(new NSUrl(pin.story.ImageURL));
+                imageData = NSData.FromUrl(new NSUrl(pin.ImageURL));
                 /*
                 if (pin.story.Images.Count > 0)
                 {
