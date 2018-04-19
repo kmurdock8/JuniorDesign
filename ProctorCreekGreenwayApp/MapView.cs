@@ -37,10 +37,6 @@ namespace ProctorCreekGreenwayApp
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
-            // Get list of all stories from central database
-            //storyList = new List<Story>();
-            //GetStories();
-
             // Initialize search bar functionality
             searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
             searchBar.SearchButtonPressed += this.OnSearchClick;
@@ -127,7 +123,6 @@ namespace ProctorCreekGreenwayApp
             int storyID = -1;
             Story story = null;
             foreach (Story s in storyList) {
-                story = s;
                 if (s.Name.Equals(locName)) {
                     // Update storyID
                     storyID = s.ID;

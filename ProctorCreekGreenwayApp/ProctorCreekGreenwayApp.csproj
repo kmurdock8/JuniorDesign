@@ -56,6 +56,7 @@
     <Compile Include="User.cs" />
     <Compile Include="RestService.cs" />
     <Compile Include="Story.cs" />
+    <Compile Include="ProctorCreekMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
