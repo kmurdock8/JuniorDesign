@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using ZXing.Net.Mobile.Forms;
 using System.Collections.Generic;
+using System.ServiceModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -11,9 +12,9 @@ namespace ProctorCreekGreenwayApp
     public class MapView : ContentPage
     {
 
-        Map map;
-        List<Story> storyList;
-        SearchBar searchBar;
+        private static Map map;
+        public static List<Story> storyList = new List<Story>();
+        public SearchBar searchBar;
 
         /*
          * Generic Mapview function for both Android and IOS
@@ -21,13 +22,14 @@ namespace ProctorCreekGreenwayApp
         */
         public MapView()
         {
+
             // Location of proctor creek
             var proctorCreek = new Position(33.778822, -84.439945);
 
-            // Inititialize map centered around proctor creek
+            //Inititialize map centered around proctor creek
             map = new Map(
                 MapSpan.FromCenterAndRadius(
-                    proctorCreek, Distance.FromMiles(0.75)))
+                    proctorCreek, Distance.FromMiles(2)))
             {
                 IsShowingUser = true,
                 HeightRequest = 100,
@@ -35,12 +37,9 @@ namespace ProctorCreekGreenwayApp
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
-
-
             // Get list of all stories from central database
-            InitializePins();
-            string pins = map.Pins.ToString();
-
+            //storyList = new List<Story>();
+            //GetStories();
 
             // Initialize search bar functionality
             searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
@@ -83,30 +82,15 @@ namespace ProctorCreekGreenwayApp
             Content = stack;
         }
 
-        /*
-         * Simple method that redirects use to a story page when a story window is clicked
-         */
-        async void OnLabelClick(object sender, EventArgs e)
+        protected async override void OnAppearing()
         {
-            await Navigation.PushAsync(new StoryPage());
-        }
+            base.OnAppearing();
 
-        // TODO: update this method to do something productive
-        async void OnSearchClick(object sender, EventArgs e)
-        {
-            if (searchBar.Text.Equals("Culc"))
-            {
-                await Navigation.PushAsync(new StoryPage());
-            }
-        }
-
-        public async void InitializePins()
-        {
-            // Get list of stories from DB
-            storyList = await App.DBManager.GetStoriesAsync();
+            List<Story> stories = await App.DBManager.GetStoriesAsync();
 
             // Loop through each story
-            foreach (Story s in storyList) {
+            foreach (Story s in stories)
+            {
                 // Get story info
                 double lat = s.Lat;
                 double lng = s.Long;
@@ -123,10 +107,22 @@ namespace ProctorCreekGreenwayApp
                 map.Pins.Add(pin);
             }
         }
-    } 
+        /*
+         * Simple method that redirects user to a story page when a story window is clicked
+         */
+        async void OnLabelClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new StoryPage());
+        }
 
-
-        
-    
+        // TODO: update this method to do something productive
+        async void OnSearchClick(object sender, EventArgs e)
+        {
+            if (searchBar.Text.Equals("Culc"))
+            {
+                await Navigation.PushAsync(new StoryPage());
+            }
+        }
+    }   
 }
 

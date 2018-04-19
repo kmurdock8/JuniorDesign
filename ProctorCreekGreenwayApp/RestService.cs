@@ -19,17 +19,17 @@ namespace ProctorCreekGreenwayApp
         private const string apiURL = "https://tranquil-wildwood-19722.herokuapp.com/api/v1";
 
         /*
+         * Simple getter and setter method to populate the list of stories
+         */
+        public List<Story> Stories { get; private set; }
+
+        /*
          * Constructor initializes an HTTP client to access central DB
          */
         public RestService()
         {
             client = new HttpClient(); 
         }
-
-        /*
-         * Simple getter and setter method to populate the list of stories
-         */
-        public List<Story> Stories { get; private set; }
 
         /*
          * Simple getter and setter method to populate a list with images for a particular story
