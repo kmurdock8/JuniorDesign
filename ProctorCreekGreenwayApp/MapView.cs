@@ -38,6 +38,13 @@ namespace ProctorCreekGreenwayApp
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
+            MessagingCenter.Subscribe<ProctorCreekMap, ProctorCreekPin>(this, "Navigation", async (sender, args) =>
+            {
+                ProctorCreekPin pin = args;
+                var page1 = new StoryPage(pin.story);
+                await Navigation.PushAsync(page1);
+            });
+
             // Initialize search bar functionality
             searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
             searchBar.SearchButtonPressed += this.OnSearchClick;
@@ -130,6 +137,8 @@ namespace ProctorCreekGreenwayApp
          */
         async void OnLabelClick(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("Pin clicked");
+
             // Figure out what pin was clicked
             ProctorCreekPin loc = (ProctorCreekPin)sender;
             string locName = loc.story.Name;
