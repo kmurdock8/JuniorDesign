@@ -48,7 +48,8 @@ namespace ProctorCreekGreenwayApp
             // Initialize search bar functionality
             searchBar = new SearchBar { Placeholder = "Search", BackgroundColor = Xamarin.Forms.Color.White };
             searchBar.SearchButtonPressed += this.OnSearchClick;
-            searchBar.TextChanged += this.OnSearchTextChange;
+            //searchBar.TextChanged += this.OnSearchTextChange;
+
 
             // Initialize QR functionality
             var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
@@ -118,6 +119,7 @@ namespace ProctorCreekGreenwayApp
                         Debug.WriteLine(e.Message);
                     }
                 }
+                //s.ImageURL = await App.DBManager.GetImageURLAsync(s.ID);
                 // Create new pin
                 var pos = new Position(lat, lng);
                 ProctorCreekPin pin = new ProctorCreekPin
@@ -132,6 +134,7 @@ namespace ProctorCreekGreenwayApp
                 storyList.Add(s);
             }
         }
+
         /*
          * Event handler for whan a pins window is clicked
          */
@@ -167,32 +170,48 @@ namespace ProctorCreekGreenwayApp
             await Navigation.PushAsync(new StoryPage(story));
         }
 
-
-        async void OnSearchTextChange(Object sender, EventArgs e) {
+        /*
+         * OnSearchTextChange: didn't finish; could implement later
+         */
+        //async void OnSearchTextChange(Object sender, EventArgs e) {
             // Set autocomplete to be all the story names
-            ListView autocomplete = new ListView();
+            //ListView autocomplete = new ListView();
 
             // Get what user has typed so far
-            SearchBar sb = (SearchBar)sender;
-            string search = sb.Text;
+            //SearchBar sb = (SearchBar)sender;
+            //string search = sb.Text;
 
-            List<string> storyNames = new List<string>();
-            foreach (Story s in storyList) {
-                if (s.Name.Contains(search)) {
-                    storyNames.Add(s.Name);
-                }
-            }
-            autocomplete.ItemsSource = storyNames;
-            stack.Children.Add(autocomplete);
-        }
+            //List<string> storyNames = new List<string>();
+            //foreach (Story s in storyList) {
+                //if (s.Name.Contains(search)) {
+                    //storyNames.Add(s.Name);
+                //}
+            //}
+            //autocomplete.ItemsSource = storyNames;
+            //stack.Children.Remove(map);
+            //stack.Children.Add(autocomplete);
+        //}
 
-        // TODO: update this method to do something productive
         async void OnSearchClick(object sender, EventArgs e)
         {
-            if (searchBar.Text.Equals("Culc"))
-            {
-                //await Navigation.PushAsync(new StoryPage());
+            SearchBar sb = (SearchBar)sender;
+            string search = sb.Text;
+            bool match = false;
+            foreach (Story s in storyList) {
+                if (s.Name.Equals(search)) {
+                    // Direct to story page
+                    await Navigation.PushAsync(new StoryPage(s));
+                    match = true;
+                }
+             }
+
+            if (!match) {
+                // Only show this if no match
+                await DisplayAlert("No Results", "No location name matches your search", "OK");
             }
+           
+
+
         }
     }   
 }
