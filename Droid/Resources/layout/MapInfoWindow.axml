@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:gravity="center"
+            android:src="@drawable/icon" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/InfoWindowTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="InfoWindowTitle"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="10sp" />
+            <TextView
+                android:id="@+id/InfoWindowSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="InfoWindowSubtitle"
+                android:maxLines="6"
+                android:textColor="@android:color/black"
+                android:textSize="8sp" />
+            <TextView
+                android:id="@+id/ContinueReading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Continue Reading"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="8sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
